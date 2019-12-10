@@ -1,0 +1,98 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the header of the site/application.
+// -----------------------------------------------------------------------------
+.flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5rem;
+    box-shadow: 0 .4rem .4rem -.2rem rgba(0,0,0, 0.2);
+    @media (max-width: 60rem) {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      padding: 1rem;
+    }
+    //Logo
+    &__logo {
+      width: 20rem;
+      height: 3rem;
+      @media (max-width: 60rem) {
+        grid-column: 2 / 3;
+        height: 2.5rem;
+        width: 15rem;
+      }
+    }
+    //Search Bar
+    &__search {
+      background: #eeeeee;
+      max-width: 55rem;
+      width: 100%;
+      height: 3rem;
+      padding: 1rem 1rem;
+      border-radius: 1rem;
+      display: flex;
+      align-items: center;
+      border: 0.1rem solid #eeeeee;
+      @media (max-width: 60rem) {
+        display: none;
+      }
+      &--input {
+        width: 85%;
+        height: 3rem;
+        padding: 1rem 0;
+        background: #eeeeee;
+        font-size: 1.6rem;
+        margin-left: 0.5rem;
+        border: none;
+        outline: 0;
+      }
+      &--img {
+        height: 2rem;
+        border-radius: 0.5rem;
+      }
+    }
+    //Header links
+    &__nav {
+      &--link {
+        display: inline;
+        font-size: 2rem;
+        padding: 0 2rem 0 2rem;
+        font-weight: 700;
+        & a:hover {
+          color: $text-hover;
+        }
+      }
+      //Media query: remove links
+      @media (max-width: 60rem) {
+        display: none;
+      }
+    }
+  }
+  //Hamburger menu. Only visible when in mobile view.
+  .menu {
+    display: none;
+    &__hamburger {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 2.5rem;
+    }
+    &__bar {
+      height: 0.2rem;
+      width: 90%;
+      background: $primary-color;
+      display: block;
+      &--1 {
+        transform: translateY(-0.4rem);
+      }
+      &--3 {
+        transform: translateY(0.4rem);
+      }
+    }
+    @media (max-width: 60rem) {
+      display: block;
+      grid-column: 1 / 2;
+    }
+  }
+  
